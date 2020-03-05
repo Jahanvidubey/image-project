@@ -18,9 +18,11 @@
 </form>
 <br/><br/>
 {% for u in uploads %}
-    <p>{{ u.name }}</p>
-    <p>{{ u.age }}</p>
+    <div style ="border: cyan dotted 1px;">
+    <h2>{{ u.name }}</h2>
+    <h2>{{ u.age }}</h2>
     <img src="{{ u.image }}" alt =" " srcset="" width="200px">
+    </div>
 {% endfor %}
 </body>
 
