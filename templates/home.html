@@ -6,24 +6,44 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
-<h1>Image project </h1>
-<form action="{% url 'normalupload' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="text" name="name" id="" placeholder="Name" ><br/>
-    <input type="number" name="age" id="" placeholder="Age"><br/>
-    <input type="file" name="myfile" id="">
-    <input type="submit" value="Submit">
-</form>
-<br/><br/>
-{% for u in uploads %}
-    <div style ="border: cyan dotted 1px;">
-    <h2>{{ u.name }}</h2>
-    <h2>{{ u.age }}</h2>
-    <img src="{{ u.image }}" alt =" " srcset="" width="200px">
+<div class ="container">
+    <div class="jumbotron">
+        <div class="jumbotron" text-align:center>
+        <h1>Image project </h1>
+        <form action="{% url 'normalupload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" id="" placeholder="Name" ><br/>
+        <input type="number" name="age" id="" placeholder="Age"><br/>
+        <input type="file" name="myfile" id="">
+        <input type="submit" value="Submit">
+        </form>
+        <br/><br/>
+        </div>
+        {% for u in uploads %}
+
+
+
+
+            <div style="border:Navy dotted 2px;">
+            <h2>{{ u.name }}</h2>
+            <h2>{{ u.age }}</h2>
+            <img src="{{ u.image }}"  srcset="" width="500px">
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+</div>
+
+
 </body>
 
 </html>
+
